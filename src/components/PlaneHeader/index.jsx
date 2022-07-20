@@ -17,7 +17,7 @@ const PlaneHeader = ({ offBtn }) => {
 		<>
 			<Box sx={{ flexGrow: 1 }}>
 				<AppBar position='static' color="inherit">
-					<Toolbar>
+					<Toolbar sx={{ display: { xs: 'flex' }, justifyContent: { xs: 'space-between' } }}>
 
 						<AirplaneTicketIcon onClick={() => navigate(paths.homePage)} fontSize='large' sx={{ cursor: 'pointer' }} />
 
@@ -32,7 +32,7 @@ const PlaneHeader = ({ offBtn }) => {
 						{
 							offBtn ? null :
 								<Link to={paths.addPlanePage} style={{ textDecoration: 'none', color: 'black' }}>
-									<Button sx={{ p: '0.9rem', mr: '1rem' }} color="inherit" variant="outlined">Add Air Plane</Button>
+									<Button sx={{ p: { xs: '0.3rem', md: '0.8rem' }, fontSize: { xs: '0.6rem', md: '1rem' }, sm: '0.9rem', mr: { md: '1rem' } }} color="inherit" variant="outlined">Add Air Plane</Button>
 								</Link>
 						}
 					</Toolbar>

@@ -49,9 +49,9 @@ const Planes = () => {
 			{serchedPlanes && renderPlanes(serchedPlanes)}
 			{planes && !planes.length && !isLoading &&
 				<Box sx={{ display: 'flex', margin: '0 auto', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-					<Typography variant='h3' component='h1' sx={{ with: '100%' }}>Sry, here we don`t have posts</Typography>
+					<Typography variant='h3' component='h1' sx={{ width: { xs: '60%', md: '100%' }, textAlign: 'center' }}>Sry, here we don`t have posts</Typography>
 					<Link to={paths.addPlanePage} style={{ textDecoration: 'none', color: 'black', marginTop: '2rem' }}>
-						<Button sx={{ p: '0.9rem', mr: '2rem' }} color="inherit" variant="outlined">Add Air Plane</Button>
+						<Button sx={{ p: '0.9rem' }} color="inherit" variant="outlined">Add Air Plane</Button>
 					</Link>
 				</Box>
 			}

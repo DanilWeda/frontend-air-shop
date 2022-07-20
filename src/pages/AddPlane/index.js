@@ -59,7 +59,7 @@ const AddPlanePage = () => {
 			</Link>
 			<Typography sx={{ color: '#808080', m: '2rem', textAlign: 'center' }} variant='h4' component="h1">Create you own Plane!</Typography>
 			<Grid container sx={{ margin: '0 auto', justifyContent: 'center', maxWidth: '1200px', p: '1.5rem' }}>
-				<Grid component={Paper} item xs={8} sx={{ justifyContent: 'center', maxWidth: '1200px', p: '1.5rem' }}>
+				<Grid component={Paper} item xs={12} sm={10} md={8} sx={{ justifyContent: 'center', maxWidth: '1200px', p: { xs: '1rem', sm: '1rem', md: '1.5rem' } }}>
 					<Grid item xs={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
 						<DriveFileRenameOutlineIcon />
 						<TextField onChange={(e) => setBody({ ...body, name: e.target.value })} value={body.name || ''} id="standard-basic" label="Name" variant="standard" sx={{ m: '1rem', flexGrow: '1' }} />
@@ -70,12 +70,12 @@ const AddPlanePage = () => {
 						<TextField onChange={(e) => setBody({ ...body, description: e.target.value })} value={body.description || ''} id="standard-basic" label="Description" variant="standard" sx={{ m: '1rem', flexGrow: '1' }} />
 					</Grid>
 					<Error error={errors?.description?.message} />
-					<Grid item xs={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+					<Grid item xs={6} sx={{ display: 'flex', justifyContent: 'left', alignItems: 'center' }}>
 						<AttachMoneyIcon />
 						<TextField onChange={(e) => setBody({ ...body, price: e.target.value.replace(/\D/g, '') })} value={body.price || ''} id="standard-basic" label="Price" variant="standard" sx={{ m: '1rem' }} />
 					</Grid>
 					<Error error={errors?.price?.message} />
-					<Grid item xs={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+					<Grid item xs={7} sx={{ display: 'flex', justifyContent: 'left', alignItems: 'center' }}>
 						<GroupAddIcon />
 						<TextField onChange={(e) => setBody({ ...body, capacity: e.target.value.replace(/\D/g, '') })} value={body.capacity || ''} id="standard-basic" label="Capacity" variant="standard" sx={{ m: '1rem' }} />
 					</Grid>

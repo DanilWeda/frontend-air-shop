@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const PlaneItem = ({ planeImage, name, description, capacity, price, _id }) => {
 	return (
 		<>
-			<Grid item xs={4} sx={{ display: 'flex', justifyContent: 'center' }}>
+			<Grid item xs={12} sm={12} md={4} xl={3} sx={{ display: 'flex', justifyContent: 'center' }}>
 				<Link to={`/${_id}`} style={{ textDecoration: 'none' }}>
 					<Card sx={{ maxWidth: '400px' }}>
 						<CardActionArea>

@@ -98,7 +98,7 @@ const Header = () => {
 
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position='static' color="inherit">
-				<Toolbar>
+				<Toolbar sx={{ display: { xs: 'flex' }, justifyContent: { xs: 'space-between' } }}>
 
 					<AirplaneTicketIcon fontSize='large' />
 
@@ -110,11 +110,11 @@ const Header = () => {
 					>
 						Travel with Comfort!
 					</Typography>
-					<Select setSortParam={setSortParam} sortParam={sortParam} />
+					<Select xs='none' setSortParam={setSortParam} sortParam={sortParam} />
 					<Link to={paths.addPlanePage} style={{ textDecoration: 'none', color: 'black' }}>
-						<Button sx={{ p: '0.9rem', mr: '1rem' }} color="inherit" variant="outlined">Add Air Plane</Button>
+						<Button sx={{ p: { xs: '0.3rem', md: '0.8rem' }, fontSize: { xs: '0.6rem', md: '1rem' }, sm: '0.9rem', mr: { md: '1rem' } }} color="inherit" variant="outlined">Add Air Plane</Button>
 					</Link>
-					<Search>
+					<Search sx={{ display: { xs: 'none', md: 'block' } }}>
 						<SearchIconWrapper>
 							<SearchIcon />
 						</SearchIconWrapper>
@@ -126,6 +126,19 @@ const Header = () => {
 					</Search>
 				</Toolbar>
 			</AppBar>
+			<Box sx={{ display: { xs: 'block', md: 'none' }, mt: { xs: '1rem' } }}>
+				<Select setSortParam={setSortParam} sortParam={sortParam} />
+				<Search >
+					<SearchIconWrapper>
+						<SearchIcon />
+					</SearchIconWrapper>
+					<StyledInputBase
+						onChange={(e) => setSearch(e.target.value)}
+						placeholder="Search…"
+						inputProps={{ 'aria-label': 'search' }}
+					/>
+				</Search>
+			</Box>
 		</Box >
 	)
 }

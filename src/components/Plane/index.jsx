@@ -17,7 +17,7 @@ const Plane = ({ name, description, price, capacity, planeImage }) => {
 					<CardMedia
 						component="img"
 						height="500px"
-						// sx={{ maxWidth: '1000px' }}
+						sx={{ height: { xs: '200px', sm: '350px', md: '500px' } }}
 						image={planeImage}
 						alt={name}
 					/>
