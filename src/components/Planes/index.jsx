@@ -14,7 +14,7 @@ const Planes = () => {
 	const dispatch = useDispatch()
 	const { planes, isLoading, isError, message, search } = useSelector((state) => state.planes)
 
-	const [serchedPlanes, setSerchedPlanes] = useState([])
+	const [serchedPlanes, setSerchedPlanes] = useState(null)
 
 
 	useEffect(() => {
@@ -32,15 +32,22 @@ const Planes = () => {
 		} else {
 			setSerchedPlanes(planes)
 		}
-	}, [search, serchedPlanes.length])
+	}, [search, serchedPlanes && serchedPlanes.length])
+
+	const renderPlanes = (planes) => {
+		if (!planes.length) {
+			return
+		}
+		return planes.map((plane) => (<PlaneItem key={plane._id} {...plane} />))
+	}
 
 
 	return (
 		<ContentWrapper>
 			{isLoading && <CircularProgress color="success" size={120} sx={{ margin: '0 auto', marginTop: '50vh' }} />}
-			{isError && <h1>{message}</h1>}
-			{serchedPlanes && serchedPlanes.map(plane => (<PlaneItem key={plane._id} {...plane} />))}
-			{planes && !planes.length &&
+			{isError && <h1>{message} </h1>}
+			{serchedPlanes && renderPlanes(serchedPlanes)}
+			{planes && !planes.length && !isLoading &&
 				<Box sx={{ display: 'flex', margin: '0 auto', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
 					<Typography variant='h3' component='h1' sx={{ with: '100%' }}>Sry, here we don`t have posts</Typography>
 					<Link to={paths.addPlanePage} style={{ textDecoration: 'none', color: 'black', marginTop: '2rem' }}>

@@ -8,7 +8,6 @@ import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import DescriptionIcon from '@mui/icons-material/Description';
 import { Link } from 'react-router-dom';
-import { path } from '../../routes/Routes'
 
 const PlaneItem = ({ planeImage, name, description, capacity, price, _id }) => {
 	return (
