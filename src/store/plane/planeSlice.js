@@ -34,7 +34,7 @@ const planesSlice = createSlice({
 		[getPlaneById.rejected]: (state, action) => {
 			state.isLoading = false;
 			state.isError = true;
-			state.message = action.payload.message;
+			state.message = action.payload?.message;
 			state.plane = null;
 		},
 		[createPlane.pending]: (state) => {

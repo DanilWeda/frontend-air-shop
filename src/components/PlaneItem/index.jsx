@@ -19,7 +19,7 @@ const PlaneItem = ({ planeImage, name, description, capacity, price, _id }) => {
 							<CardMedia
 								component="img"
 								height="340px"
-								image={planeImage}
+								image={`${process.env.REACT_APP_API_URL}${planeImage}`}
 								alt={name}
 							/>
 							<CardContent>

@@ -18,7 +18,7 @@ const Plane = ({ name, description, price, capacity, planeImage }) => {
 						component="img"
 						height="500px"
 						sx={{ height: { xs: '200px', sm: '350px', md: '500px' } }}
-						image={planeImage}
+						image={`${process.env.REACT_APP_API_URL}${planeImage}`}
 						alt={name}
 					/>
 				</Grid>
